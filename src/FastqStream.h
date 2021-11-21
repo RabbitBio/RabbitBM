@@ -168,14 +168,14 @@ namespace dsrc {
 //                    printf("get some data %d\n", now.second);
                     if (now.second <= len) {
                         memcpy(buf, now.first, now.second);
-//                        delete[] now.first;
+                        delete[] now.first;
                         ret = now.second;
                     } else {
                         int move_last = now.second - len;
                         memcpy(buf, now.first, len);
                         memcpy(L.first, now.first + len, move_last);
                         L.second = move_last;
-//                        delete[] now.first;
+                        delete[] now.first;
                         ret = len;
                     }
 
